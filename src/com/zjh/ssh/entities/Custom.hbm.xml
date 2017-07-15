@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-27 14:42:43 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zjh.ssh.entities.Customer" table="SSH_CUSTOMER">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="companyname" type="java.lang.String">
+			<column name="COMPANYNAME" />
+		</property>
+		<property name="contact" type="java.lang.String">
+			<column name="CONTACT" />
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" />
+		</property>
+		<property name="briefintroduction">
+			<column name="BRIEFINTRODUCTION" sql-type="mediumtext"/>
+		</property>
+		<property name="createtime" type="java.util.Date">
+			<column name="CREATETIME" />
+		</property>
+	</class>
+</hibernate-mapping>

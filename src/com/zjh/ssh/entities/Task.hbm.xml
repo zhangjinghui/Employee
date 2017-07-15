@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-21 19:22:21 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zjh.ssh.entities.Task" table="SSH_TASK">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="sender" type="java.lang.String">
+			<column name="SENDER" />
+		</property>
+		<property name="title" type="java.lang.String">
+			<column name="TITLE" />
+		</property>
+		<property name="content">
+			<column name="CONTENT" sql-type="mediumtext" />
+		</property>
+		<property name="priority" type="java.lang.String">
+			<column name="PRIORITY" />
+		</property>
+		<property name="createtime" type="java.util.Date">
+			<column name="CREATETIME" />
+		</property>
+		<property name="starttime" type="java.util.Date">
+			<column name="STARTTIME" />
+		</property>
+		<property name="endtime" type="java.util.Date">
+			<column name="ENDTIME" />
+		</property>
+		<many-to-one name="department" class="com.zjh.ssh.entities.Department" lazy="false">
+			<column name="DEPTNO" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

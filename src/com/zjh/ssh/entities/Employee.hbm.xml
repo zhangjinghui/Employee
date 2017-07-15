@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-19 20:47:47 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zjh.ssh.entities.Employee" table="SSH_EMP">
+		<id name="empno" type="java.lang.Integer">
+			<column name="EMPNO" />
+			<generator class="native" />
+		</id>
+		<property name="ename" type="java.lang.String">
+			<column name="ENAME" />
+		</property>
+		<property name="job" type="java.lang.String">
+			<column name="JOB" />
+		</property>
+		<property name="hiredate" type="java.util.Date">
+			<column name="HIREDATE" />
+		</property>
+		<property name="createtime" type="java.util.Date">
+			<column name="CREATETIME" />
+		</property>
+		<many-to-one name="department" class="com.zjh.ssh.entities.Department"
+			lazy="false">
+			<column name="DEPTNO" />
+		</many-to-one>
+		<!-- 映射 1-1 的关联关系: 在对应的数据表中已经有外键了, 当前持久化类使用 one-to-one 进行映射 -->
+		<!-- 没有外键的一端需要使用one-to-one元素，该元素使用 property-ref 属性指定使用被关联实体主键以外的字段作为关联字段 
+			(默认即 MGR_ID) -->
+		<one-to-one name="user" class="com.zjh.ssh.entities.User"
+			cascade="delete" property-ref="emp"></one-to-one>
+	</class>
+</hibernate-mapping>

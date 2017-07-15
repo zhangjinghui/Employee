@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-29 18:46:46 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zjh.ssh.entities.Salary" table="SSH_SALARY">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="ename" type="java.lang.String">
+			<column name="ENAME" />
+		</property>
+		<property name="year" type="java.lang.Integer">
+			<column name="YEAR" />
+		</property>
+		<property name="month" type="java.lang.Integer">
+			<column name="MONTH" />
+		</property>
+		<property name="bouns" type="java.lang.Integer">
+			<column name="BOUNS" />
+		</property>
+		<property name="fine" type="java.lang.Integer">
+			<column name="FINE" />
+		</property>
+		<property name="sender" type="java.lang.String">
+			<column name="SENDER" />
+		</property>
+		<property name="realsalary" type="java.lang.Integer">
+			<column name="REALSALARY" />
+		</property>
+		<many-to-one name="salgrade" class="com.zjh.ssh.entities.SalGrade" lazy="false"
+			column="BASICSALARY">
+		</many-to-one>
+	</class>
+</hibernate-mapping>

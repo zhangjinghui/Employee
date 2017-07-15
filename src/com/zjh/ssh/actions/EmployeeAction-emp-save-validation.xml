@@ -1,0 +1,24 @@
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+	<field name="user.email">
+		<field-validator type="email">
+			<message>必须提供一个有效的 email 地址</message>
+		</field-validator>
+	</field>
+	<field name="user.age">
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">130</param>
+			<message key="error.int"></message>
+		</field-validator>
+	</field>
+	<field name="user.phone">
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[(^1[3|4|5|7|8][0-9]{9}$)]]></param>
+			<message>电话号码必须是一个有效的11位数字</message>
+		</field-validator>
+	</field>
+</validators>

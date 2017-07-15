@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-20 9:54:48 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+	<class name="com.zjh.ssh.entities.User" table="SSH_USER">
+		<id name="id" type="java.lang.Integer">
+			<column name="ID" />
+			<generator class="native" />
+		</id>
+		<property name="username" type="java.lang.String">
+			<column name="USERNAME" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" />
+		</property>
+		<property name="realname" type="java.lang.String">
+			<column name="REALNAME" />
+		</property>
+		<property name="sex" type="java.lang.String">
+			<column name="SEX" />
+		</property>
+		<property name="age" type="java.lang.Integer">
+			<column name="AGE" />
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="EMAIL" />
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" />
+		</property>
+		<property name="type" type="java.lang.Integer">
+			<column name="TYPE" />
+		</property>
+		<many-to-one name="emp" class="com.zjh.ssh.entities.Employee"
+			lazy="false" unique="true">
+			<column name="EMPNO" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>
